@@ -50,4 +50,5 @@ def edit(request, id):
         return HttpResponse("Operation not allowed")
 
 
-    
+def not_found(request, path):
+    return render(request, "404.html")
