@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+</script>
+<body>
+    <header class="header">
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/add">Add</a></li>
+      </ul>
+      <h2>Basketball Blog</h2>
+    </header>
+    <main>
+          {% for post in posts %}
+          
+            <div class="card">
+              <a class="link" href="show/{{post.id}}">  
+                <h2>{{ post.title }}</h2>
+              </a>
+              <a href="/edit/{{post.id}}">Edit</a>
+              <a href="/delete/{{post.id}}">Delete</a>
+              <h5>{{ post.created_at }} </h5>
+            </div>
+         
+          {% endfor %}
+      </main>
+      <footer>
+        <h2>This website was built using <b>Django</b> | Copyright © Francois Mukaba</h2>
+      <footer>
+    
+</body>
+</html>
